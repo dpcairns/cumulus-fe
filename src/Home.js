@@ -39,7 +39,7 @@ export default class Home extends Component {
     }
 
     // add handleSignUpClick
-    handleSignInClick = async(e) => {
+    handleSignUpClick = async(e) => {
         e.preventDefault();
 
         // pass user info into signUpUser function

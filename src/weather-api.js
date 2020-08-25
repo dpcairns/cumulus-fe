@@ -4,7 +4,6 @@ const URL = process.env.REACT_APP_API_URL;
 
 // signInUser function
 export function signInUser(user) {
-    console.log(user, 'hellllooooooo');
     try {
         // make POST req to the auth/signin endpoint with user info
         return request.post(`${URL}/auth/signin`, user);

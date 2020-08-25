@@ -1,26 +1,53 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, { Component } from 'react';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import Home from './Home.js';
+import DetailPage from './DetailPage.js';
+import FavoritePage from './FavoritePage.js';
+import About from './About.js';
+import SearchPage from './SearchPage.js';
 import './App.css';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+export default class App extends Component {
 
-export default App;
+    render() {
+
+    return (
+    <div className="App">
+        Hello Derp
+        <Router>
+            <Switch> {/* Home route signup & signin */}
+                <Route 
+                    path='/'
+                    exact
+                    render={(routerProps) => <Home {...routerProps} />}
+                />
+                {/* Search & Result page */}
+                <Route 
+                    path='/SearchPage'
+                    exact
+                    render={(routerProps) => <SearchPage {...routerProps} />}
+                />
+                {/* MOAR DETAILS page */}
+                <Route 
+                    path='/DetailPage'
+                    exact
+                    render={(routerProps) => <DetailPage {...routerProps} />}
+                />
+                {/* Favorites page */}
+                <Route 
+                    path='/FavoritePage'
+                    exact
+                    render={(routerProps) => <FavoritePage {...routerProps} />}
+                />
+                {/* About us page */}
+                <Route 
+                    path='/About'
+                    exact
+                    render={(routerProps) => <About {...routerProps} />}
+                />
+            </Switch>
+        </Router>
+    </div>
+    );
+    }
+}

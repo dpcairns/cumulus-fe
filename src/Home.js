@@ -11,7 +11,7 @@ export default class Home extends Component {
     }
 
     // add handleSignInClick
-    handleSignInClick = async(e) => {
+    handleSignInClick = async (e) => {
         e.preventDefault();
 
         // pass user info into signInUser function
@@ -39,7 +39,7 @@ export default class Home extends Component {
     }
 
     // add handleSignUpClick
-    handleSignInClick = async(e) => {
+    handleSignUpClick = async (e) => {
         e.preventDefault();
 
         // pass user info into signUpUser function
@@ -70,18 +70,18 @@ export default class Home extends Component {
         return (
             <div className="Home-Page">
                 <h1>
-                Home/Landing page
+                    Home/Landing page
                 </h1>
 
                 <form className="Sign-In" onSubmit={this.handleSignInClick}>
                     <h3>Sign In</h3>
 
                     <label>
-                        Email: 
+                        Email:
                         <input onChange={this.handleSignInEmailChange} value={this.state.signInEmail} />
                     </label>
                     <label>
-                        Password: 
+                        Password:
                         <input onChange={this.handleSignInPasswordChange} value={this.state.signInPassword} />
                     </label>
 
@@ -92,11 +92,11 @@ export default class Home extends Component {
                     <h3>Sign Up</h3>
 
                     <label>
-                        Email: 
+                        Email:
                         <input onChange={this.handleSignUpEmailChange} value={this.state.signUpEmail} />
                     </label>
                     <label>
-                        Password: 
+                        Password:
                         <input onChange={this.handleSignUpPasswordChange} value={this.state.signUpPassword} />
                     </label>
 

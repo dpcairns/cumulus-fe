@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
-// import and make signInUser signUpUser function
-import { signInUser } from './weather-api.js';
+import { signInUser, signUpUser } from './weather-api.js';
 
 export default class Home extends Component {
     // set state
@@ -40,9 +39,31 @@ export default class Home extends Component {
     }
 
     // add handleSignUpClick
-    // add handleSignUpEmailChange
-    // add handleSignUpPasswordChange
+    handleSignInClick = async(e) => {
+        e.preventDefault();
 
+        // pass user info into signUpUser function
+        const user = await signUpUser({
+            email: this.state.signUpEmail,
+            password: this.state.signUpPassword
+        })
+
+        // handle user token
+        this.props.handleToken(user.body.token)
+
+        // reroute user to favorites list page
+        this.props.history.push('/SearchPage')
+    }
+
+    // add handleSignUpEmailChange
+    handleSignUpEmailChange = (e) => {
+        this.setState({ signUpEmail: e.target.value })
+    }
+
+    // add handleSignUpPasswordChange
+    handleSignUpPasswordChange = (e) => {
+        this.setState({ signUpPassword: e.target.value })
+    }
 
 
     render() {

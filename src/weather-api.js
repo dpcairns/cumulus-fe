@@ -11,3 +11,13 @@ export function signInUser(user) {
         return { error: e.message }
     }
 }
+
+// signUpUser function
+export function signUpUser(user) {
+    try {
+        // make POST req to the auth/signup endpoint with user info
+        return request.post(`${URL}/auth/signup`, user);
+    } catch(e) {
+        return { error: e.message }
+    }
+}

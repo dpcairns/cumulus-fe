@@ -22,11 +22,11 @@ export function signUpUser(user) {
     }
 }
 
-export function fetchSearchedWeather(city, state, country) {
+export function fetchSearchedWeather({city, state, country}) {
     const token = localStorage.getItem('TOKEN');
 
     return request
-        .get(`${URL}/api/search/?city=${city},${state},${country}`)
+        .get(`${URL}/api/search/?key=${process.env.REACT_APP_WEATHERBIT_API_KEY}&city=${city}&state=${state}&country=${country}`)
         .set('Authorization', token );
 }
 

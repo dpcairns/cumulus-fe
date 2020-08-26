@@ -11,6 +11,13 @@ export default class SearchPage extends Component {
         country: 'US',
         CountryData: CountryData,
     }
+
+    // check for token
+    componentDidMount = async () => {
+        if(!this.props.token) {
+            this.props.history.push('/');
+        }
+    }
     
     // handle City
     handleCityChange = (e) => {
@@ -36,11 +43,13 @@ export default class SearchPage extends Component {
         
         try{
         const userSearch = await fetchSearchedWeather(
-            this.state.searchCity,
-            this.state.searchState,
-            this.state.country
+            {
+                city: this.state.searchCity,
+                state: this.state.searchState,
+                country: this.state.country
+            }
         )
-           console.log(userSearch, 'supppppppppppp');
+           console.log(userSearch, 'STATE');
         }catch(e){ 
             return({ error:e.message })
         }
@@ -52,7 +61,7 @@ export default class SearchPage extends Component {
         e.preventDefault();
 
         this.setState({ country: e.target.value });
-        console.log(this.state.country, 'fuckkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk');
+        console.log(e.target.value, 'DROPDOWN COUNTRY');
     }
 
 
@@ -72,7 +81,7 @@ export default class SearchPage extends Component {
                         country={this.state.country} CountryData={this.state.CountryData} handleDropdownChange={this.handleDropdownChange} />
                 </form>
                     {/* button -city name- */}
-                    <button onSubmit={this.handleSubmit} className="search-button">Search</button>
+                    <button onClick={this.handleSubmit} className="search-button">Search</button>
             </div>
         )
     }

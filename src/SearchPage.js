@@ -49,7 +49,20 @@ export default class SearchPage extends Component {
                 country: this.state.country
             }
         )
-           console.log(userSearch, 'STATE');
+           console.log(userSearch, 'USER_SEARCH_RESULTS');
+           
+        //    set search results to state
+        this.setState({
+            country_code: userSearch.body.country_code,
+            lat: userSearch.body.lat,
+            location: userSearch.body.location,
+            lon: userSearch.body.lon,
+            sunrise: userSearch.body.sunrise,
+            sunset: userSearch.body.sunset,
+            temp: userSearch.body.temp,
+            timezone: userSearch.body.timezone,
+            weather_description: userSearch.body.weather_description
+        })
         }catch(e){ 
             return({ error:e.message })
         }
@@ -67,22 +80,39 @@ export default class SearchPage extends Component {
 
     render() {
         return (
-            <div>
-                <form>
-                    <label>
-                        Enter City
-                            <input onChange={this.handleCityChange} value={this.state.searchCity} />
-                    </label>
-                    <label>
-                        Enter State
-                            <input onChange={this.handleStateChange} value={this.state.searchState} />
-                    </label>
-                    <Dropdown 
-                        country={this.state.country} CountryData={this.state.CountryData} handleDropdownChange={this.handleDropdownChange} />
-                </form>
-                    {/* button -city name- */}
-                    <button onClick={this.handleSubmit} className="search-button">Search</button>
-            </div>
+            <>
+                <div className="search-div">
+                    <form>
+                        <label>
+                            Enter City
+                                <input onChange={this.handleCityChange} value={this.state.searchCity} />
+                        </label>
+                        <label>
+                            Enter State
+                                <input onChange={this.handleStateChange} value={this.state.searchState} />
+                        </label>
+                        <Dropdown 
+                            country={this.state.country} CountryData={this.state.CountryData} handleDropdownChange={this.handleDropdownChange} />
+                    </form>
+                        {/* button -city name- */}
+                        <button onClick={this.handleSubmit} className="search-button">Search</button>
+                    </div>
+                <div className="results-div">
+                    {
+                        <section>
+                            <p>country_code: {this.state.country_code}</p>
+                            <p>lat: {this.state.lat}</p>
+                            <p>location: {this.state.location}</p>
+                            <p>lon: {this.state.lon}</p>
+                            <p>sunrise: {this.state.sunrise}</p>
+                            <p>sunset: {this.state.sunset}</p>
+                            <p>temp: {this.state.temp}</p>
+                            <p>timezone: {this.state.timezone}</p>
+                            <p>weather_description: {this.state.weather_description}</p>
+                        </section>
+                    }
+                </div>
+            </>
         )
     }
 }

@@ -1,42 +1,59 @@
 import React, { Component } from 'react';
 import Dropdown from './Dropdown.js';
+import { fetchSearchedWeather } from './weather-api.js';
+import CountryData from './CountryData.js';
+
 
 export default class SearchPage extends Component {
     state = {
         searchCity: '',
-        searchState: ''
+        searchState: '',
+        country: 'US',
+        CountryData: CountryData,
+    }
+    
+    // handle City
+    handleCityChange = (e) => {
+        this.setState({
+            searchCity: e.target.value
+        })
+        
+        console.log(e.target.value, 'okkkkkkkkkkkkkkkkk');
+    }
+    
+    // handle State
+    handleStateChange = (e) => {
+        this.setState({
+            searchState: e.target.value
+        })
+        
+        console.log(e.target.value, 'okkkkkkkkkkkkkkkkk');
     }
 
-
-
-// pick up finishing search bar here
-handleSubmit = async (e) => {
-    e.preventDefault();
-    // const userSearch = await fetchWeather({
-    // })
-
-}
-
-handleCityChange = (e) => {
-    this.setState({
-        searchCity: e.target.value
-    })
+    // handle submit-button
+    handleSubmit = async (e) => {
+        e.preventDefault();
+        
+        try{
+        const userSearch = await fetchSearchedWeather(
+            this.state.searchCity,
+            this.state.searchState,
+            this.state.country
+        )
+           console.log(userSearch, 'supppppppppppp');
+        }catch(e){ 
+            return({ error:e.message })
+        }
+    }
     
-    console.log(e.target.value, 'okkkkkkkkkkkkkkkkk');
-}
-
-// handle State
-handleStateChange = (e) => {
-    this.setState({
-        searchState: e.target.value
-    })
     
-    console.log(e.target.value, 'okkkkkkkkkkkkkkkkk');
-}
+    // handleSubmit function goes here
+    handleDropdownChange = async (e) => {
+        e.preventDefault();
 
-
-// handleSubmit function goes here
-
+        this.setState({ country: e.target.value });
+        console.log(this.state.country, 'fuckkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk');
+    }
 
 
     render() {
@@ -51,7 +68,8 @@ handleStateChange = (e) => {
                         Enter State
                             <input onChange={this.handleStateChange} value={this.state.searchState} />
                     </label>
-                    <Dropdown />
+                    <Dropdown 
+                        country={this.state.country} CountryData={this.state.CountryData} handleDropdownChange={this.handleDropdownChange} />
                 </form>
                     {/* button -city name- */}
                     <button onSubmit={this.handleSubmit} className="search-button">Search</button>

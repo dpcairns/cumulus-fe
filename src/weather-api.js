@@ -22,6 +22,15 @@ export function signUpUser(user) {
     }
 }
 
+export function fetchSearchedWeather(city, state, country) {
+    const token = localStorage.getItem('TOKEN');
+
+    return request
+        .get(`${URL}/api/search/?city=${city},${state},${country}`)
+        .set('Authorization', token );
+}
+
+
 //capitalized TOKEN = localStorage token
 export function fetchAllWeather(id) {
     try {

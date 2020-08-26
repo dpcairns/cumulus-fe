@@ -113,14 +113,8 @@ export default class SearchPage extends Component {
                     {
                         <section>
                             <p>country_code: {this.state.country_code}</p>
-                            <p>lat: {this.state.lat}</p>
                             <p>location: {this.state.location}</p>
-                            <p>lon: {this.state.lon}</p>
-                            <p>sunrise: {this.state.sunrise}</p>
-                            <p>sunset: {this.state.sunset}</p>
                             <p>temp: {this.state.temp}</p>
-                            <p>timezone: {this.state.timezone}</p>
-                            <p>weather_description: {this.state.weather_description}</p>
                         </section>
                     }
                 </div>

@@ -20,8 +20,8 @@ export default class FavoritePage extends Component {
         }
     }
 
-    handleRedirect = () => {
-        this.props.history.push('/DetailPage')
+    handleRedirect = (id) => {
+        this.props.history.push(`/DetailPage/${id}`)
     }
 
     render() {
@@ -33,7 +33,7 @@ export default class FavoritePage extends Component {
                             <p>{weather.location}</p>
                             <p>{weather.state_code}</p>
                             <p>{weather.country_code}</p>
-                            <button onClick={this.handleRedirect}>See Details</button>
+                            <button onClick={() => this.handleRedirect(weather.id)}>See Details</button>
                         </div>
                     })
                 }

@@ -30,6 +30,19 @@ export function fetchSearchedWeather({ city, state, country }) {
         .set('Authorization', token);
 }
 
+export function fetchFavoriteWeather(id) {
+    try {
+        const token = localStorage.getItem('TOKEN');
+
+        return request.get(`${URL}/api/weather/${id}`)
+            .set('Authorization', token);
+
+    } catch (e) {
+        return { error: e.message }
+    }
+}
+
+
 
 //capitalized TOKEN = localStorage token
 export function fetchAllWeather() {
@@ -57,5 +70,5 @@ export function deleteFavorite(id) {
 
     return request
         .delete(`${URL}/api/weather/${id}`)
-        .set('Authoization', token);
+        .set('Authorization', token);
 }

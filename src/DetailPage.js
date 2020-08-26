@@ -46,6 +46,8 @@ export default class DetailsPage extends Component {
 
     handleRemoveTile = async () => {
         await deleteFavorite(this.props.match.params.id);
+
+        this.props.history.push('/FavoritePage')
     }
 
     render() {

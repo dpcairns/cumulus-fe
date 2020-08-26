@@ -32,11 +32,11 @@ export function fetchSearchedWeather({ city, state, country }) {
 
 
 //capitalized TOKEN = localStorage token
-export function fetchAllWeather(id) {
+export function fetchAllWeather() {
     try {
         const token = localStorage.getItem('TOKEN');
 
-        return request.get(`${URL}/api/weather/${id}`)
+        return request.get(`${URL}/api/weather`)
             .set('Authorization', token);
 
     } catch (e) {

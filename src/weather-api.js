@@ -51,3 +51,11 @@ export function addFavorite(weatherItem) {
         .post(`${URL}/api/weather`, weatherItem)
         .set('Authorization', token);
 }
+
+export function deleteFavorite(id) {
+    const token = localStorage.getItem('TOKEN');
+
+    return request
+        .delete(`${URL}/api/weather/${id}`)
+        .set('Authoization', token);
+}

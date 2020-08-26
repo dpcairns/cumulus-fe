@@ -14,7 +14,7 @@ export default class App extends Component {
     }
 
     handleToken = (token) => {
-        this.setState({ token: token})
+        this.setState({ token: token })
         localStorage.setItem('TOKEN', token)
     }
 
@@ -25,54 +25,54 @@ export default class App extends Component {
 
     render() {
 
-    return (
-    <div className="App">
-        Hello Derp
-        <Router>
-            <div className="Nav-Links">
-                <Link to='/'>Home</Link>
-                {
-                    this.state.token &&
-                    <div>
-                        <Link to='/SearchPage'>Search</Link>
-                        <Link to='/FavoritePage'>Favorites</Link>
+        return (
+            <div className="App">
+                Hello Derp
+                <Router>
+                    <div className="Nav-Links">
+                        <Link to='/'>Home</Link>
+                        {
+                            this.state.token &&
+                            <div>
+                                <Link to='/SearchPage'>Search</Link>
+                                <Link to='/FavoritePage'>Favorites</Link>
+                            </div>
+                        }
+                        <Link to='/About'>About Us</Link>
                     </div>
-                }
-                <Link to='/About'>About Us</Link>
-            </div> 
-            <Switch> {/* Home route signup & signin */}
-                <Route 
-                    path='/'
-                    exact
-                    render={(routerProps) => <Home handleToken={this.handleToken} {...routerProps} />}
-                />
-                {/* Search & Result page */}
-                <Route 
-                    path='/SearchPage'
-                    exact
-                    render={(routerProps) => <SearchPage token={this.state.token} {...routerProps} />}
-                />
-                {/* MOAR DETAILS page */}
-                <Route 
-                    path='/DetailPage'
-                    exact
-                    render={(routerProps) => <DetailPage token={this.state.token} {...routerProps} />}
-                />
-                {/* Favorites page */}
-                <Route 
-                    path='/FavoritePage'
-                    exact
-                    render={(routerProps) => <FavoritePage token={this.state.token} {...routerProps} />}
-                />
-                {/* About us page */}
-                <Route 
-                    path='/About'
-                    exact
-                    render={(routerProps) => <About {...routerProps} />}
-                />
-            </Switch>
-        </Router>
-    </div>
-    );
+                    <Switch> {/* Home route signup & signin */}
+                        <Route
+                            path='/'
+                            exact
+                            render={(routerProps) => <Home handleToken={this.handleToken} {...routerProps} />}
+                        />
+                        {/* Search & Result page */}
+                        <Route
+                            path='/SearchPage'
+                            exact
+                            render={(routerProps) => <SearchPage token={this.state.token} {...routerProps} />}
+                        />
+                        {/* MOAR DETAILS page */}
+                        <Route
+                            path='/DetailPage/:id'
+                            exact
+                            render={(routerProps) => <DetailPage token={this.state.token} {...routerProps} />}
+                        />
+                        {/* Favorites page */}
+                        <Route
+                            path='/FavoritePage'
+                            exact
+                            render={(routerProps) => <FavoritePage token={this.state.token} {...routerProps} />}
+                        />
+                        {/* About us page */}
+                        <Route
+                            path='/About'
+                            exact
+                            render={(routerProps) => <About {...routerProps} />}
+                        />
+                    </Switch>
+                </Router>
+            </div>
+        );
     }
 }

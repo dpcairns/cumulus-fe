@@ -22,17 +22,15 @@ export function signUpUser(user) {
     }
 }
 
-export function fetchSearchedWeather(city, state, country) {
+export function fetchSearchedWeather({ city, state, country }) {
     const token = localStorage.getItem('TOKEN');
 
     return request
-        .get(`${URL}/api/search/?city=${city},${state},${country}`)
-        .set('Authorization', token );
+        .get(`${URL}/api/search/?key=${process.env.REACT_APP_WEATHERBIT_API_KEY}&city=${city}&state=${state}&country=${country}`)
+        .set('Authorization', token);
 }
 
-
-//capitalized TOKEN = localStorage token
-export function fetchAllWeather(id) {
+export function fetchFavoriteWeather(id) {
     try {
         const token = localStorage.getItem('TOKEN');
 
@@ -42,4 +40,35 @@ export function fetchAllWeather(id) {
     } catch (e) {
         return { error: e.message }
     }
+}
+
+
+
+//capitalized TOKEN = localStorage token
+export function fetchAllWeather() {
+    try {
+        const token = localStorage.getItem('TOKEN');
+
+        return request.get(`${URL}/api/weather`)
+            .set('Authorization', token);
+
+    } catch (e) {
+        return { error: e.message }
+    }
+}
+
+export function addFavorite(weatherItem) {
+    const token = localStorage.getItem('TOKEN');
+
+    return request
+        .post(`${URL}/api/weather`, weatherItem)
+        .set('Authorization', token);
+}
+
+export function deleteFavorite(id) {
+    const token = localStorage.getItem('TOKEN');
+
+    return request
+        .delete(`${URL}/api/weather/${id}`)
+        .set('Authorization', token);
 }

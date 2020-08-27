@@ -92,18 +92,17 @@ export default class SearchPage extends Component {
                     <form>
                         <label>
                             Enter City
-                                <input onChange={this.handleCityChange} value={this.state.searchCity} />
+                                <input onChange={this.handleCityChange} value={this.state.searchCity} type="text" />
                         </label>
                         <label>
                             Enter State
-                                <input onChange={this.handleStateChange} value={this.state.searchState} />
+                                <input onChange={this.handleStateChange} value={this.state.searchState} type="text" />
                         </label>
                         <Dropdown
                             country={this.state.country} CountryData={this.state.CountryData} handleDropdownChange={this.handleDropdownChange} />
-                    </form>
-                    {/* button -city name- */}
                     <button onClick={this.handleSubmit} className="search-button">Search</button>
-                </div>
+                    </form>
+                  
                 <div className="results-div">
                     {
                         <section>
@@ -112,8 +111,9 @@ export default class SearchPage extends Component {
                             <p>Temperature: {this.state.temp ? Math.ceil(((this.state.temp)*1.8) + 32)+'°' : ''} </p>
                         </section>
                     }
+                    <button onClick={this.handleAddFavorites} className="favorites-button">Add to Favorites</button>
                 </div>
-                <button onClick={this.handleAddFavorites}>Add to Favorites</button>
+                </div>
             </>
         )
     }

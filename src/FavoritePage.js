@@ -26,17 +26,20 @@ export default class FavoritePage extends Component {
 
     render() {
         return (
-            <div>
-                {
-                    this.state.favoritedWeather.map(weather => {
-                        return <div>
-                            <p>{weather.location}</p>
-                            <p>{weather.state_code}</p>
-                            <p>{weather.country_code}</p>
-                            <button onClick={() => this.handleRedirect(weather.id)}>See Details</button>
-                        </div>
-                    })
-                }
+            <div className="favorites-container">
+                <h1>Your Favorites</h1>
+                <div className="all-favorited-tiles">
+                    {
+                        this.state.favoritedWeather.map(weather => {
+                            return <div className="one-tile">
+                                <p>{weather.location}</p>
+                                <p>{weather.state_code}</p>
+                                <p>{weather.country_code}</p>
+                                <button onClick={() => this.handleRedirect(weather.id)}>See Details</button>
+                            </div>
+                        })
+                    }
+                </div>
             </div>
         )
     }

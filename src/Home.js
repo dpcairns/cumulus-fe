@@ -70,8 +70,10 @@ export default class Home extends Component {
         return (
             <div className="Home-Page">
                 <h1>
-                    Home/Landing page
+                    How's the weather?
                 </h1>
+
+                <h3>Welcome to your favorite weather app you've yet to discover <span className="cumulus">cumulus</span>. A not-so-average, visually stunning weather application for your everyday needs.</h3>
                 <div className="auth-forms">
                     <form className="Sign-In" onSubmit={this.handleSignInClick}>
                         <h3>Sign In</h3>

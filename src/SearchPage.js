@@ -72,7 +72,7 @@ export default class SearchPage extends Component {
         console.log(e.target.value, 'DROPDOWN COUNTRY');
     }
 
-    handleAddFavorites = async (e) => {
+    handleAddFavorites = async () => {
         await addFavorite(
             {
                 location: this.state.location,
@@ -107,9 +107,9 @@ export default class SearchPage extends Component {
                 <div className="results-div">
                     {
                         <section>
-                            <p>country_code: {this.state.country_code}</p>
-                            <p>location: {this.state.location}</p>
-                            <p>temp: {this.state.temp}</p>
+                            <p>Country: {this.state.country_code}</p>
+                            <p>City: {this.state.location}</p>
+                            <p>Temperature: {this.state.temp ? Math.ceil(((this.state.temp)*1.8) + 32)+'°' : ''} </p>
                         </section>
                     }
                 </div>

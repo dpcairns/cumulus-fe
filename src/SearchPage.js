@@ -77,8 +77,8 @@ export default class SearchPage extends Component {
         console.log(e.target.value, 'DROPDOWN COUNTRY');
     }
 
-    handleAddFavorites = async (e) => {
-        const favorite = await addFavorite(
+    handleAddFavorites = async () => {
+        await addFavorite(
             {
                 location: this.state.location,
                 country_code: this.state.country_code,

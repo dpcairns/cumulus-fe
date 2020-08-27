@@ -35,15 +35,18 @@ export default class App extends Component {
             // our LOGO / icon [note: import collected images]
              */}
             
-            <div class="top-bar">
+            <div className="top-bar">
                 {/* previously class menu */}
-                <div class="logo">
-                    <img src="https://image.flaticon.com/icons/svg/3275/3275029.svg" alt="logo" />
+                <div className="logo">
+                    <img src="https://image.flaticon.com/icons/svg/3275/3275029.svg" height="33px" alt="logo" />
+
                     {/* <ion-icon name="ios-menu"></ion-icon> */}
                 </div>
-                <div class="lang">eng</div>
+                <div className="lang">eng</div>
 
-                <div class="search">
+                <div className="search">
+                    <img src="" height="33px" alt="logo" />
+
                     {/* <ion-icon name="ios-search"></ion-icon> */}
                 </div>
             </div>
@@ -86,7 +89,7 @@ export default class App extends Component {
                             exact
                             render={(routerProps) => <SearchPage token={this.state.token} {...routerProps} />}
                         />
-                        {/* MOAR DETAILS page */}
+                        {/* MORE DETAILS page */}
                         <Route
                             path='/DetailPage/:id'
                             exact

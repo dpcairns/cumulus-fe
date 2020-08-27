@@ -2,7 +2,9 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  cursor: url('https://bricampgomez.com/assets/img/batboy-50.png') 25 25,auto;
 }
+/* need to check the img switch on the cursor to something else above */
 
 body {
   font-family: 'Poppins';
@@ -11,6 +13,8 @@ body {
   height: 100vh;
   overflow: hidden;
 }
+
+
 
 ul {
   list-style: none;
@@ -64,6 +68,10 @@ ul {
 
 a {
   text-decoration: none;
+}
+
+img .logo {
+  max-height: 30px;
 }
 
 /* TEXT */

@@ -72,6 +72,7 @@ ul {
 
 a {
   text-decoration: none;
+  color: whitesmoke;
 }
 
 img .logo {
@@ -164,11 +165,12 @@ img .logo {
   /* formally .sponsor */
 .instruction {
   position: absolute;
+  width: 150px;
   right: 100px;
   bottom: 100px;
   text-align: center;
   background-color: rgba(255, 255, 255, .15);  
-  backdrop-filter: blur(1px);
+  backdrop-filter: blur(0);
 }
 
 /* no rotation needed */
@@ -203,16 +205,16 @@ img .logo {
   right: 500px;
   bottom: 0;
   background-color: rgba(255, 255, 255, .15);  
- backdrop-filter: blur(.3px);
+ backdrop-filter: blur(1px);
 }
 
 .sign-in {
-  width: 580px;
+  width: auto;
   height: 720px;
   position: absolute;
   right: 123px;
   bottom: 60px;
   background-color: rgba(255, 255, 255, .15);  
- backdrop-filter: blur(1px);
+ backdrop-filter: blur(.5px);
 }
 

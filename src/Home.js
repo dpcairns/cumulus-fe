@@ -68,12 +68,8 @@ export default class Home extends Component {
 
     render() {
         return (
-            <div className="Home-Page">
-                    {/* for BIG TEXT styling css */}
-                    <div className="overlay first"></div>
-                    <div className="overlay second"></div>
-                    <div className="overlay third"></div>
-
+            <div className="home-container">
+                <div className="home-instructions">
                 <div className="text">
                     <h1>Welcome to</h1>
                     <h3>Your favorite weather app you've yet to discover <br /> Cumulis </h3>
@@ -85,7 +81,7 @@ export default class Home extends Component {
                     <img src="https://image.flaticon.com/icons/svg/3275/3275020.svg" height="45px" alt="logo" />
                     <p>Feel free to sign up if you haven't done so previously, otherwise sign in!</p>
                 </div>
-
+            </div>
                 {/* <div className="distortion"></div> */}
                     
 

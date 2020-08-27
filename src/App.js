@@ -29,10 +29,10 @@ export default class App extends Component {
             <div className="App">
             {/* <!-- TOP BAR previously NAV bar -->
             // our LOGO / icon [note: import collected images] */}
-               
+                
 
                 {/* previously class menu */}
-                <div className="top-bar">
+                {/* <div className="top-bar">
             
                 <div className="logo">
                     <img src="https://image.flaticon.com/icons/svg/3275/3275022.svg" height="33px" alt="logo" />
@@ -41,11 +41,12 @@ export default class App extends Component {
                 <div className="search">
                     <img src="https://image.flaticon.com/icons/svg/3275/3275029.svg" height="33px" alt="logo" />
                 </div>
-            </div>
+            </div> */}
 
-
+        
                 <Router>
                     {/* {/* SIDE BAR @ 90 degrees - LINKS  */}
+                    <div className="sidebar-navlinks">
                         <ul>
                             <li>
                                 <Link to='/'>Home</Link>
@@ -54,7 +55,7 @@ export default class App extends Component {
                         {
                             this.state.token &&
                             // change className = "side-bar"
-                            <div activeClassName="side-bar">
+                            <div className="side-bar">
                                 <ul>
                                     <li>
                                         <Link to='/SearchPage'>Search</Link>
@@ -72,7 +73,7 @@ export default class App extends Component {
                             </ul>
                             </div>
                         }
-                    
+                    </div>
                     <Switch> {/* Home route signup & signin */}
                         <Route
                             path='/'

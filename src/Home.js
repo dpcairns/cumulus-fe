@@ -74,10 +74,20 @@ export default class Home extends Component {
                     <div className="overlay second"></div>
                     <div className="overlay third"></div>
 
-                <h1>
-                    {/* got to change this */}
-                    Home/Landing page
-                </h1>
+                <div className="text">
+                    <h1>Welcome to</h1>
+                    <h3>Your favorite weather app you've yet to discover <br /> Cumulis </h3>
+                    <p>A not-so-average, visually stunning weather application for your every day needs</p>
+                </div>
+
+                {/* instructions ref. sponsor section */}
+                <div className="instruction">
+                    <img src="https://image.flaticon.com/icons/svg/3275/3275020.svg" height="45px" alt="logo" />
+                    <p>Feel free to sign up if you haven't done so previously, otherwise sign in!</p>
+                </div>
+
+                {/* <div className="distortion"></div> */}
+                    
 
                 {/* Need to style the form .sign-in via className */}
                 <form className="sign-in" onSubmit={this.handleSignInClick}>
@@ -96,7 +106,8 @@ export default class Home extends Component {
                 </form>
 
                 {/* Need to style the form .sign-in via className */}
-                <form className="sign-up" onSubmit={this.handleSignUpClick}>
+                <div className="sign-up">
+                <form onSubmit={this.handleSignUpClick}>
                     <h3>Sign Up</h3>
 
                     <label>
@@ -110,6 +121,7 @@ export default class Home extends Component {
 
                     <button>Sign Up!</button>
                 </form>
+                </div>
             </div>
         )
     }

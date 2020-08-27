@@ -3,40 +3,25 @@
   padding: 0;
   box-sizing: border-box;
   cursor: url('https://bricampgomez.com/assets/img/batboy-50.png') 25 25,auto;
+  font-family: 'Poppins';
+  text-transform: uppercase;
 }
 /* need to check the img switch on the cursor to something else above */
 
+
+/* https://i.pinimg.com/originals/4b/e8/d5/4be8d59b09ff60d01537dc366f9c2dd4.jpg */
 body {
-  font-family: 'Poppins';
   background: #a7a7a7;
+  background-image: url("https://cdn.hipwallpaper.com/i/9/96/sjcKm9.jpg");
+  background-repeat: no-repeat;
   width: 100%;
   height: 100vh;
   overflow: hidden;
 }
 
 
-
 ul {
   list-style: none;
-}
-
-
-/* className: Nav-Links */
-
-/* className: links */
-.links ul {
-  position: absolute;
-  bottom: 250px;
-  left: -140px;
-  transform: rotate(-90deg);
-}
-  
-.links ul li {
-  font-size: 10px;
-  font-weight: 600;
-  letter-spacing: 2px;
-  display: inline-block;
-  padding: 0 30px;
 }
 
 /* change all navbar's to top-bar ((TOP OF PAGES)) */
@@ -64,6 +49,25 @@ ul {
   text-transform: uppercase;
 }
 
+/* className: Nav-Links */
+
+/* className: links */
+.side-bar ul {
+  position: absolute;
+  bottom: 250px;
+  left: -140px;
+  transform: rotate(-90deg);
+}
+  
+.side-bar ul li {
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 2px;
+  display: inline-block;
+  padding: 0 30px;
+}
+
+
 /* links */
 
 a {
@@ -74,16 +78,16 @@ img .logo {
   max-height: 30px;
 }
 
-/* TEXT */
 
-  /* .text {
+/* TEXT */
+.text {
     position: absolute;
     top: 200px;
     left: 100px;
     transform: rotate(-90deg);
-  }
+}
   
-  .text h1 {
+.text h1 {
     font-size: 120px;
     text-transform: uppercase;
     font-weight: 900;
@@ -94,12 +98,25 @@ img .logo {
     overflow: hidden;
     height: 150px;
     width: 600px;
-  }
-  .text h1 .hidetext {
+}
+
+/* .text h1::after {
+  content: "cumulus";
+  position: absolute;
+  top: 40px;
+  left: -80px;
+  color: #EFDE74;
+  z-index: -1;
+  font-size: 150px;
+  font-weight: 600;
+  letter-spacing: 8px;
+} */
+
+.text h1 .hidetext {
     position: absolute;
-  }
+}
   
-  .text h2 {
+.text h2 {
     position: absolute;
     top: 40px;
     left: -80px;
@@ -109,9 +126,9 @@ img .logo {
     font-weight: 600;
     letter-spacing: 8px;
     text-transform: uppercase;
-  }
+}
   
-  .text h3 {
+.text h3 {
     font-size: 40px;
     text-transform: uppercase;
     font-weight: 600;
@@ -120,12 +137,14 @@ img .logo {
     position: relative;
     overflow: hidden;
     height: 80px;
-  }
-  .text h3 .hidetext {
-    position: absolute;
-  }
+}
   
-  .text p {
+.text h3 .hidetext {
+    position: absolute;
+}
+  
+  
+.text p {
     width: 200px;
     font-size: 12px;
     margin-top: 30px;
@@ -135,7 +154,65 @@ img .logo {
     overflow: hidden;
     height: 110px;
   }
-  .text p .hidetext {
+  
+.text p .hidetext {
     position: absolute;
-  } */
+  }
+
+
+
+  /* formally .sponsor */
+.instruction {
+  position: absolute;
+  right: 100px;
+  bottom: 100px;
+  text-align: center;
+  background-color: rgba(255, 255, 255, .15);  
+  backdrop-filter: blur(1px);
+}
+
+/* no rotation needed */
+.instruction img {
+  width: 200px;
+  /* transform: rotate(-90deg); */
+}
+
+/* no rotation needed */
+.instruction p {
+  margin-top: 20px;
+  font-size: 12px;
+  text-transform: uppercase;
+  font-weight: 900;
+  /* transform: rotate(180deg); */
+}
+
+
+/* formally place for distortion but we want our forms to come out here */
+/* form {
+  width: 580px;
+  height: 720px;
+  position: absolute;
+  right: 250px;
+  bottom: 0;
+} */
+
+.sign-up {
+  width: 580px;
+  height: 720px;
+  position: absolute;
+  right: 500px;
+  bottom: 0;
+  background-color: rgba(255, 255, 255, .15);  
+ backdrop-filter: blur(.3px);
+}
+
+.sign-in {
+  width: 580px;
+  height: 720px;
+  position: absolute;
+  right: 123px;
+  bottom: 60px;
+  background-color: rgba(255, 255, 255, .15);  
+ backdrop-filter: blur(1px);
+}
 

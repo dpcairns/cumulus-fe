@@ -72,36 +72,37 @@ export default class Home extends Component {
                 <h1>
                     Home/Landing page
                 </h1>
+                <div className="auth-forms">
+                    <form className="Sign-In" onSubmit={this.handleSignInClick}>
+                        <h3>Sign In</h3>
 
-                <form className="Sign-In" onSubmit={this.handleSignInClick}>
-                    <h3>Sign In</h3>
+                        <label>
+                            Email:
+                            <input onChange={this.handleSignInEmailChange} type="text" value={this.state.signInEmail} />
+                        </label>
+                        <label>
+                            Password:
+                            <input onChange={this.handleSignInPasswordChange} type="password" value={this.state.signInPassword} />
+                        </label>
 
-                    <label>
-                        Email:
-                        <input onChange={this.handleSignInEmailChange} value={this.state.signInEmail} />
-                    </label>
-                    <label>
-                        Password:
-                        <input onChange={this.handleSignInPasswordChange} value={this.state.signInPassword} />
-                    </label>
+                        <button>Sign In!</button>
+                    </form>
 
-                    <button>Sign In!</button>
-                </form>
+                    <form className="Sign-Up" onSubmit={this.handleSignUpClick}>
+                        <h3>Sign Up</h3>
 
-                <form className="Sign-Up" onSubmit={this.handleSignUpClick}>
-                    <h3>Sign Up</h3>
+                        <label>
+                            Email:
+                            <input onChange={this.handleSignUpEmailChange} type="text" value={this.state.signUpEmail} />
+                        </label>
+                        <label>
+                            Password:
+                            <input onChange={this.handleSignUpPasswordChange} type="password" value={this.state.signUpPassword} />
+                        </label>
 
-                    <label>
-                        Email:
-                        <input onChange={this.handleSignUpEmailChange} value={this.state.signUpEmail} />
-                    </label>
-                    <label>
-                        Password:
-                        <input onChange={this.handleSignUpPasswordChange} value={this.state.signUpPassword} />
-                    </label>
-
-                    <button>Sign Up!</button>
-                </form>
+                        <button>Sign Up!</button>
+                    </form>
+                </div>
             </div>
         )
     }

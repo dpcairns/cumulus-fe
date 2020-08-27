@@ -89,7 +89,8 @@ export default class SearchPage extends Component {
         return (
             <>
                 <div className="search-div">
-                    <form>
+                    {/* <h1>Search</h1> */}
+                    <form className="search-form">
                         <label>
                             Enter City
                                 <input onChange={this.handleCityChange} value={this.state.searchCity} type="text" />

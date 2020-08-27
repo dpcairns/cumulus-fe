@@ -23,8 +23,6 @@ export default class SearchPage extends Component {
         this.setState({
             searchCity: e.target.value
         })
-
-        console.log(e.target.value, 'okkkkkkkkkkkkkkkkk');
     }
 
     // handle State
@@ -32,8 +30,6 @@ export default class SearchPage extends Component {
         this.setState({
             searchState: e.target.value
         })
-
-        console.log(e.target.value, 'okkkkkkkkkkkkkkkkk');
     }
 
     // handle submit-button
@@ -48,7 +44,6 @@ export default class SearchPage extends Component {
                     country: this.state.country
                 }
             )
-            console.log(userSearch, 'USER_SEARCH_RESULTS');
 
             //    set search results to state
             this.setState({
@@ -78,7 +73,7 @@ export default class SearchPage extends Component {
     }
 
     handleAddFavorites = async (e) => {
-        const favorite = await addFavorite(
+        await addFavorite(
             {
                 location: this.state.location,
                 country_code: this.state.country_code,

@@ -218,3 +218,55 @@ img .logo {
  backdrop-filter: blur(.5px);
 }
 
+
+/* pick up from here tomorrow morning with form styling */
+
+form {
+  border-radius: 5px;
+  background-color: #f2f2f243;
+  padding: 20px;
+  margin: 10px 0;
+  font-size: 10px;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+
+/* email input boxes design */
+input[type=email] {
+  width: 130px;
+  box-sizing: border-box;
+  border: 2px solid #ccc;
+  border-radius: 4px;
+  font-size: 16px;
+  background-color: #3CBC8D;
+  background-image: url('https://img.icons8.com/nolan/30/email.png');
+  background-position: 6px 6px; 
+  background-repeat: no-repeat;
+  margin: 8px 0;
+  padding: 12px 20px 12px 40px;
+  transition: width 0.4s ease-in-out;
+}
+
+input[type=email]:focus {
+  width: 100%;
+}
+
+/* password input boxes design */
+input[type=password] {
+  width: 130px;
+  box-sizing: border-box;
+  border: 2px solid #ccc;
+  border-radius: 4px;
+  font-size: 16px;
+  background-color: #3CBC8D;
+  background-image: url('https://img.icons8.com/ios-glyphs/24/000000/private-lock.png');
+  background-position: 10px 10px; 
+  background-repeat: no-repeat;
+  padding: 12px 20px 12px 40px;
+  transition: width 0.4s ease-in-out;
+}
+
+input[type=password]:focus {
+  width: 100%;
+}

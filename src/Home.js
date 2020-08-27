@@ -95,11 +95,11 @@ export default class Home extends Component {
 
                     <label>
                         Email:
-                        <input onChange={this.handleSignInEmailChange} value={this.state.signInEmail} />
+                        <input type="email" onChange={this.handleSignInEmailChange} value={this.state.signInEmail} />
                     </label>
                     <label>
                         Password:
-                        <input onChange={this.handleSignInPasswordChange} value={this.state.signInPassword} />
+                        <input type="password" onChange={this.handleSignInPasswordChange} value={this.state.signInPassword} />
                     </label>
 
                     <button>Sign In!</button>
@@ -112,11 +112,11 @@ export default class Home extends Component {
 
                     <label>
                         Email:
-                        <input onChange={this.handleSignUpEmailChange} value={this.state.signUpEmail} />
+                        <input type="email" onChange={this.handleSignUpEmailChange} value={this.state.signUpEmail} />
                     </label>
                     <label>
                         Password:
-                        <input onChange={this.handleSignUpPasswordChange} value={this.state.signUpPassword} />
+                        <input type="password" onChange={this.handleSignUpPasswordChange} value={this.state.signUpPassword} />
                     </label>
 
                     <button>Sign Up!</button>

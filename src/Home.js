@@ -69,11 +69,18 @@ export default class Home extends Component {
     render() {
         return (
             <div className="Home-Page">
+                    {/* for BIG TEXT styling css */}
+                    <div class="overlay first"></div>
+                    <div class="overlay second"></div>
+                    <div class="overlay third"></div>
+
                 <h1>
+                    {/* got to change this */}
                     Home/Landing page
                 </h1>
 
-                <form className="Sign-In" onSubmit={this.handleSignInClick}>
+                {/* Need to style the form .sign-in via className */}
+                <form className="sign-in" onSubmit={this.handleSignInClick}>
                     <h3>Sign In</h3>
 
                     <label>
@@ -88,7 +95,8 @@ export default class Home extends Component {
                     <button>Sign In!</button>
                 </form>
 
-                <form className="Sign-Up" onSubmit={this.handleSignUpClick}>
+                {/* Need to style the form .sign-in via className */}
+                <form className="sign-up" onSubmit={this.handleSignUpClick}>
                     <h3>Sign Up</h3>
 
                     <label>

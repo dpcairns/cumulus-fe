@@ -1,38 +1,133 @@
-.App {
-  text-align: center;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+body {
+  font-family: 'Poppins';
+  background: #a7a7a7;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+ul {
+  list-style: none;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+
+/* className: Nav-Links */
+
+/* className: links */
+.links ul {
+  position: absolute;
+  bottom: 250px;
+  left: -140px;
+  transform: rotate(-90deg);
+}
+  
+.links ul li {
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 2px;
+  display: inline-block;
+  padding: 0 30px;
+}
+
+/* change all navbar's to top-bar ((TOP OF PAGES)) */
+.top-bar {
   display: flex;
-  flex-direction: column;
+  justify-content: space-between;
+  height: 80px;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
 
-.App-link {
-  color: #61dafb;
+/* need to get image into here */
+.top-bar > div {
+  padding: 0 30px;
+  font-size: 20px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.top-bar .logo {
+  margin-right: auto;
+  height: 50px;
 }
+
+.top-bar .lang {
+  font-size: 10px;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+/* links */
+
+a {
+  text-decoration: none;
+}
+
+/* TEXT */
+
+  /* .text {
+    position: absolute;
+    top: 200px;
+    left: 100px;
+    transform: rotate(-90deg);
+  }
+  
+  .text h1 {
+    font-size: 120px;
+    text-transform: uppercase;
+    font-weight: 900;
+    letter-spacing: -10px;
+    margin-bottom: 20px;
+  
+    position: relative;
+    overflow: hidden;
+    height: 150px;
+    width: 600px;
+  }
+  .text h1 .hidetext {
+    position: absolute;
+  }
+  
+  .text h2 {
+    position: absolute;
+    top: 40px;
+    left: -80px;
+    color: #EFDE74;
+    z-index: -1;
+    font-size: 150px;
+    font-weight: 600;
+    letter-spacing: 8px;
+    text-transform: uppercase;
+  }
+  
+  .text h3 {
+    font-size: 40px;
+    text-transform: uppercase;
+    font-weight: 600;
+    line-height: 1;
+  
+    position: relative;
+    overflow: hidden;
+    height: 80px;
+  }
+  .text h3 .hidetext {
+    position: absolute;
+  }
+  
+  .text p {
+    width: 200px;
+    font-size: 12px;
+    margin-top: 30px;
+    font-weight: 500;
+  
+    position: relative;
+    overflow: hidden;
+    height: 110px;
+  }
+  .text p .hidetext {
+    position: absolute;
+  } */
+

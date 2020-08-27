@@ -27,7 +27,6 @@ export default class App extends Component {
 
         return (
             <div className="App">
-                Hello Derp
                 <Router>
                     <div className="Nav-Links">
                         <Link to='/'>Home</Link>

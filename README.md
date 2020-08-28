@@ -9,3 +9,7 @@
 0.0.8 - Delete and favorite functions working
 0.0.9 - Redirect button from detail page
 1.0.0 - App functioning working
+
+## Photo Credit
+https://www.pexels.com/photo/seaside-994605/
+Fabian Wiktor

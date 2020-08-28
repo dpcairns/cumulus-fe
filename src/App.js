@@ -8,7 +8,7 @@ import SearchPage from './SearchPage.js';
 import './App.css';
 
 export default class App extends Component {
-    // set state
+
     state = {
         token: localStorage.getItem('TOKEN'),
     }
@@ -39,31 +39,27 @@ export default class App extends Component {
                         }
                         <Link to='/About'>About</Link>
                     </div>
-                    <Switch> {/* Home route signup & signin */}
+                    <Switch>
                         <Route
                             path='/'
                             exact
                             render={(routerProps) => <Home handleToken={this.handleToken} {...routerProps} />}
                         />
-                        {/* Search & Result page */}
                         <Route
                             path='/SearchPage'
                             exact
                             render={(routerProps) => <SearchPage token={this.state.token} {...routerProps} />}
                         />
-                        {/* MOAR DETAILS page */}
                         <Route
                             path='/DetailPage/:id'
                             exact
                             render={(routerProps) => <DetailPage token={this.state.token} {...routerProps} />}
                         />
-                        {/* Favorites page */}
                         <Route
                             path='/FavoritePage'
                             exact
                             render={(routerProps) => <FavoritePage token={this.state.token} {...routerProps} />}
                         />
-                        {/* About us page */}
                         <Route
                             path='/About'
                             exact

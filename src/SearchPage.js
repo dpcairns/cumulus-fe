@@ -11,28 +11,24 @@ export default class SearchPage extends Component {
         CountryData: CountryData,
     }
 
-    // check for token
     componentDidMount = async () => {
         if (!this.props.token) {
             this.props.history.push('/');
         }
     }
 
-    // handle City
     handleCityChange = (e) => {
         this.setState({
             searchCity: e.target.value
         })
     }
 
-    // handle State
     handleStateChange = (e) => {
         this.setState({
             searchState: e.target.value
         })
     }
 
-    // handle submit-button
     handleSubmit = async (e) => {
         e.preventDefault();
 
@@ -45,7 +41,6 @@ export default class SearchPage extends Component {
                 }
             )
 
-            //    set search results to state
             this.setState({
                 country_code: userSearch.body.country_code,
                 state_code: userSearch.body.state_code,
@@ -63,8 +58,6 @@ export default class SearchPage extends Component {
         }
     }
 
-
-    // handleSubmit function goes here
     handleDropdownChange = async (e) => {
         e.preventDefault();
 
@@ -73,7 +66,7 @@ export default class SearchPage extends Component {
     }
 
     handleAddFavorites = async () => {
-        if(!this.state.searchCity) {
+        if (!this.state.searchCity) {
             this.props.history.push('./SearchPage');
         } else {
             await addFavorite(
@@ -106,19 +99,19 @@ export default class SearchPage extends Component {
                         </label>
                         <Dropdown
                             country={this.state.country} CountryData={this.state.CountryData} handleDropdownChange={this.handleDropdownChange} />
-                    <button onClick={this.handleSubmit} className="search-button">Search</button>
+                        <button onClick={this.handleSubmit} className="search-button">Search</button>
                     </form>
-                  
-                <div className="results-div">
-                    {
-                        <section>
-                            <p>Country: {this.state.country_code}</p>
-                            <p>City: {this.state.location}</p>
-                            <p>Temperature: {this.state.temp ? Math.ceil(((this.state.temp)*1.8) + 32)+'°' : ''} </p>
-                        </section>
-                    }
-                    <button onClick={this.handleAddFavorites} className="favorites-button">Add to Favorites</button>
-                </div>
+
+                    <div className="results-div">
+                        {
+                            <section>
+                                <p>Country: {this.state.country_code}</p>
+                                <p>City: {this.state.location}</p>
+                                <p>Temperature: {this.state.temp ? Math.ceil(((this.state.temp) * 1.8) + 32) + '°' : ''} </p>
+                            </section>
+                        }
+                        <button onClick={this.handleAddFavorites} className="favorites-button">Add to Favorites</button>
+                    </div>
                 </div>
             </>
         )

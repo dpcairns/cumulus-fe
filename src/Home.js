@@ -70,7 +70,7 @@ export default class Home extends Component {
         return (
             <div className="Home-Page">
                 <h1>
-                    How's the weather?
+                    Cumulus
                 </h1>
 
                 <h3>Welcome to your favorite weather app you've yet to discover <span className="cumulus">cumulus</span>. A not-so-average, visually stunning weather application for your everyday needs.</h3>

@@ -37,7 +37,7 @@ export default class App extends Component {
                                 <Link home-links to='/FavoritePage'>Favorites</Link>
                             </div>
                         }
-                        <Link to='/About'>About Us</Link>
+                        <Link to='/About'>About</Link>
                     </div>
                     <Switch> {/* Home route signup & signin */}
                         <Route

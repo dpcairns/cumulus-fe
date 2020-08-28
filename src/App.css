@@ -1,6 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=Lexend+Peta&family=Monoton&display=swap');
+
 * {  
    --black: #000229; 
    --blue: #a0c4e2;  
+   --blue-frosty: #a0c4e290;  
    --red: #e47011;  
    --orange-frosty:  rgba(228, 112, 17, 0.484);
    --yellow: #fff599;  
@@ -9,29 +12,26 @@
    margin: 0;  
    padding: 0;  
    box-sizing: border-box;  
-   font-family: 'Poppins';  
+   font-family: 'Lexend Peta';  
    
   }
 
    /* desktop */
-@media (min-width: 400px) {
+@media (min-width: 402px) {
   .App {
     text-align: center;
     display: grid;
     grid-template-columns: 200px 1fr;
     min-height: 100vh;
-    /* height: 100%; */
     min-width: 100vw;
-    /* width: 100%; */
-    background-image: url("https://cdn.hipwallpaper.com/i/9/96/sjcKm9.jpg");
+    background-image: url('/beach.jpg');
     background-size: cover;
     background-repeat: repeat;
-    /* overflow: -moz-hidden-unscrollable; */
     color: white;
   }
   
   .Nav-Links {
-    background-color: rgba(255, 255, 255, .15); 
+    background-color: rgba(255, 255, 255, 0.286); 
     backdrop-filter: blur(30);
   }
   
@@ -40,6 +40,12 @@
     text-decoration: none;
     font-size: 1.3rem;
     text-transform: uppercase;
+    display: flex;
+    flex-direction: column;
+    transform: rotate(-90deg);
+    margin: 40%;
+    padding: 40px;
+    color: black;
   }
 
   .Home-Page {
@@ -48,7 +54,6 @@
   }
 
   h1 {
-    background: chocolate;
     margin-top: 2%;
     width: 100%;
     /* margin-right: 12%; */
@@ -63,7 +68,7 @@
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    background-color: rgba(228, 112, 17, 0.484);
+    background-color: var(--frosty);
     margin: 10%;
     padding: 4%
   }
@@ -71,19 +76,26 @@
   button {
     width: 75px;
     color: var(--black);
+    margin: 5px;
+  }
+
+  button:hover {
+    cursor: pointer;
+    background-color: var(--blue);
   }
 
   .favorites-button {
     width: fit-content;
     padding: 2px;
     color: var(--black);
+    margin: 5px;
   }
 
   .results-div {
-    background-color: rgba(228, 112, 17, 0.484);
+    background-color: var(--frosty);
     padding: 30px;
     line-height: 2rem;
-    margin: 10%;
+    margin: 4%;
   }
 
   .search-div {
@@ -96,16 +108,14 @@
     color: var(--black);
   }
 
-  input[type=password]:focus {
+  input[type=password]:focus, input[type=text]:focus {
     color: var(--black);  
     width: 60%;
-    background: #a0c4e2;
+    background: var(--blue);
   }
 
-  input[type=text]:focus {
-    color: var(--black);  
-    width: 60%;
-    background: #a0c4e2;
+  input {
+    margin: 5px;
   }
 
   .favorites-container {
@@ -135,6 +145,11 @@
     flex-direction: column;
     align-items: center;
     line-height: 3rem;
+  }
+
+  .one-tile:hover {
+    background-color: rgba(245, 245, 245, 0.751);
+    color: var(--black)
   }
 
   .detail-div {
@@ -167,14 +182,18 @@
     grid-auto-rows: auto;
     margin: 5px;
     max-width: 300px;
-    height: 350px;
+    height: 550px;
     padding: 5%;
     border-radius: 5px;
-    background-color: var(--frosty);
+    background-color: var(--blue-frosty);
     border: 2px solid var(--grey);
-   
+   color: black
   }
   
+  .one-about-us-tile:hover {
+    background-color: rgba(245, 245, 245, 0.751);
+  }
+
 }
 
 
@@ -182,15 +201,16 @@
 @media (max-width: 400px) {
     .App {
       text-align: center;
-      background-image: url("https://cdn.hipwallpaper.com/i/9/96/sjcKm9.jpg");
+      background-image: url('/sky.jpg');
       min-height: 100vh;
       height: 100%;
     }
 
     h1 {
-      background: chocolate;
+      background:var(--blue-frosty);
       margin-top: 2%;
       width: 100vw;
+      color: white;
     }
   
     .cumulus {
@@ -202,29 +222,40 @@
       align-items: center;
       justify-content: center;
       flex-direction: column;
-      background-color: rgba(228, 112, 17, 0.484);
+      background-color: var(--blue-frosty);
       margin: 10%;
       padding: 4%
     }
 
     .Nav-Links {
-      background-color: rgba(255, 255, 255, .15); 
+      background-color: rgba(255, 255, 255, 0.286); 
       backdrop-filter: blur(30);
     }
 
-    input[type=password]:focus {  
-      width: 60%;
-      background: #a0c4e2;
+    a {
+      color: white;
+      font-weight: bolder;
+      text-decoration: none;
+      font-size: 1.3rem;
+      text-transform: uppercase;
+      display: block;
     }
-  
-    input[type=text]:focus {  
+
+    input[type=password]:focus, input[type=text]:focus {
+      color: var(--black);  
       width: 60%;
-      background: #a0c4e2;
+      background: var(--blue);
+      margin: 5px;
     }
 
     button {
       width: 75px;
       color: var(--black);
+    }
+
+    button:hover {
+      cursor: pointer;
+      background-color: var(--blue);
     }
 
     .favorites-button {
@@ -234,7 +265,7 @@
     }
 
     .results-div {
-      background-color: rgba(228, 112, 17, 0.484);
+      background-color: var(--blue-frosty);
       padding: 30px;
       line-height: 2rem;
       margin: 10%;
@@ -298,5 +329,9 @@
       border-radius: 5px;
       background-color: var(--frosty);
       border: 2px solid var(--grey);
+    }
+
+    .one-about-us-tile:hover {
+      background-color: rgba(245, 245, 245, 0.751);
     }
 }

@@ -89,7 +89,7 @@ export default class SearchPage extends Component {
         return (
             <>
                 <div className="search-div">
-                    {/* <h1>Search</h1> */}
+                    <h1>How's the weather?</h1>
                     <form className="search-form">
                         <label>
                             Enter City

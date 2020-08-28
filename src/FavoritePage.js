@@ -32,9 +32,11 @@ export default class FavoritePage extends Component {
                     {
                         this.state.favoritedWeather.map(weather => {
                             return <div className="one-tile">
+                                <div>
                                 <p>{weather.location}</p>
                                 <p>{weather.state_code}</p>
                                 <p>{weather.country_code}</p>
+                                </div>
                                 <button onClick={() => this.handleRedirect(weather.id)}>See Details</button>
                             </div>
                         })

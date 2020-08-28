@@ -73,15 +73,20 @@ export default class SearchPage extends Component {
     }
 
     handleAddFavorites = async () => {
-        await addFavorite(
-            {
-                location: this.state.location,
-                country_code: this.state.country_code,
-                state_code: this.state.state_code,
-                lat: this.state.lat,
-                lon: this.state.lon
-            }
-        )
+        if(!this.state.searchCity) {
+            this.props.history.push('./SearchPage');
+        } else {
+            await addFavorite(
+                {
+                    location: this.state.location,
+                    country_code: this.state.country_code,
+                    state_code: this.state.state_code,
+                    lat: this.state.lat,
+                    lon: this.state.lon
+                }
+            )
+
+        }
     }
 
 

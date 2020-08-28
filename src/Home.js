@@ -69,39 +69,46 @@ export default class Home extends Component {
     render() {
         return (
             <div className="Home-Page">
-                <h1>
-                    Home/Landing page
+                <h1 className="home-title">
+                    Cumulus
                 </h1>
 
-                <form className="Sign-In" onSubmit={this.handleSignInClick}>
-                    <h3>Sign In</h3>
+                <h3>Welcome to your favorite weather app you've yet to discover <span className="cumulus">cumulus</span>. A not-so-average, visually stunning weather application for your everyday needs.</h3>
+                <div className="auth-forms">
+                    <form className="Sign-In" onSubmit={this.handleSignInClick}>
+                        <h3>Sign In</h3>
+                        <div className="email-password">
+                            <label>
+                                Email:
+                                <input onChange={this.handleSignInEmailChange} type="text" value={this.state.signInEmail} />
+                            </label>
+                            <br/>
+                            <label>
+                                Password:
+                                <input onChange={this.handleSignInPasswordChange} type="password" value={this.state.signInPassword} />
+                            </label>
+                        <button>Sign In!</button>
+                        </div>
+                    </form>
 
-                    <label>
-                        Email:
-                        <input onChange={this.handleSignInEmailChange} value={this.state.signInEmail} />
-                    </label>
-                    <label>
-                        Password:
-                        <input onChange={this.handleSignInPasswordChange} value={this.state.signInPassword} />
-                    </label>
+                    <form className="Sign-Up" onSubmit={this.handleSignUpClick}>
+                        <h3>Sign Up</h3>
 
-                    <button>Sign In!</button>
-                </form>
+                        <div className="email-password">
+                            <label>
+                                Email:
+                                <input onChange={this.handleSignUpEmailChange} type="text" value={this.state.signUpEmail} />
+                            </label>
+                            <br/>
+                            <label>
+                                Password:
+                                <input onChange={this.handleSignUpPasswordChange} type="password" value={this.state.signUpPassword} />
+                            </label>
 
-                <form className="Sign-Up" onSubmit={this.handleSignUpClick}>
-                    <h3>Sign Up</h3>
-
-                    <label>
-                        Email:
-                        <input onChange={this.handleSignUpEmailChange} value={this.state.signUpEmail} />
-                    </label>
-                    <label>
-                        Password:
-                        <input onChange={this.handleSignUpPasswordChange} value={this.state.signUpPassword} />
-                    </label>
-
-                    <button>Sign Up!</button>
-                </form>
+                            <button>Sign Up!</button>
+                        </div>
+                    </form>
+                </div>
             </div>
         )
     }

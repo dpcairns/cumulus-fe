@@ -29,15 +29,15 @@ export default class App extends Component {
             <div className="App">
                 <Router>
                     <div className="Nav-Links">
-                        <Link to='/'>Home</Link>
+                        <Link home-links to='/'>Home</Link>
                         {
                             this.state.token &&
                             <div>
-                                <Link to='/SearchPage'>Search</Link>
-                                <Link to='/FavoritePage'>Favorites</Link>
+                                <Link home-links to='/SearchPage'>Search</Link>
+                                <Link home-links to='/FavoritePage'>Favorites</Link>
                             </div>
                         }
-                        <Link to='/About'>About Us</Link>
+                        <Link to='/About'>About</Link>
                     </div>
                     <Switch> {/* Home route signup & signin */}
                         <Route

@@ -52,15 +52,15 @@ export default class DetailsPage extends Component {
 
     render() {
         return (
-            <div>
-                <p>location: {this.state.location}</p>
-                <p>country_code: {this.state.country_code}</p>
-                <p>lat: {this.state.lat}</p>
-                <p>lon: {this.state.lon}</p>
-                <p>sunrise: {this.state.sunrise}</p>
-                <p>sunset: {this.state.sunset}</p>
-                <p>timezone: {this.state.timezone}</p>
-                <p>weather_description: {this.state.weather_description}</p>
+            <div className="detail-div">
+                <p>City: {this.state.location}</p>
+                <p>Country: {this.state.country_code}</p>
+                <p>Latitude: {this.state.lat}</p>
+                <p>Longitude: {this.state.lon}</p>
+                <p>Sunrise: {this.state.sunrise}</p>
+                <p>Sunset: {this.state.sunset}</p>
+                <p>Timezone: {this.state.timezone}</p>
+                <p>Weather Description: {this.state.weather_description}</p>
                 <button onClick={this.handleRemoveTile}>Remove</button>
             </div>
         )

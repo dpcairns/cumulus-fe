@@ -15,6 +15,7 @@ export default class Dropdown extends Component {
                     <label>
                         <select value={this.state.value} onChange={this.props.handleDropdownChange}>
                             {
+                                // nice use of Object.values!
                                 (Object.values(this.state.CountryData)).map((country) => <option value={country.iso2}>{country.name}</option>)
                             }
                             <option value="US"></option>

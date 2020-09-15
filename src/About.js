@@ -4,6 +4,7 @@ export default class About extends Component {
     render() {
         return (
             <div>
+                {/* would have like to see the data stored in an array, then mapped over to create these divs procedurally */}
                 <h1>About Us</h1>
                 <div className="about-us-tiles">
                     <div className="one-about-us-tile">

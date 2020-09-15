@@ -37,6 +37,7 @@ export default class FavoritePage extends Component {
                                 <p>{weather.state_code}</p>
                                 <p>{weather.country_code}</p>
                                 </div>
+                                {/* nice use of the anonymous function pattern to get a particular item's id in a callback */}
                                 <button onClick={() => this.handleRedirect(weather.id)}>See Details</button>
                             </div>
                         })

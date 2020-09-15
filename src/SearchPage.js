@@ -8,6 +8,7 @@ export default class SearchPage extends Component {
         searchCity: '',
         searchState: '',
         country: 'US',
+        // this capitalized variable is a little weird
         CountryData: CountryData,
     }
 
@@ -41,17 +42,30 @@ export default class SearchPage extends Component {
                 }
             )
 
+            const {
+                country_code,
+                state_code,
+                lat,
+                location,
+                lon,
+                sunrise,
+                sunset,
+                temp,
+                timezone,
+                weather_description,
+            } = userSearch.body;
+
             this.setState({
-                country_code: userSearch.body.country_code,
-                state_code: userSearch.body.state_code,
-                lat: userSearch.body.lat,
-                location: userSearch.body.location,
-                lon: userSearch.body.lon,
-                sunrise: userSearch.body.sunrise,
-                sunset: userSearch.body.sunset,
-                temp: userSearch.body.temp,
-                timezone: userSearch.body.timezone,
-                weather_description: userSearch.body.weather_description
+                country_code,
+                state_code,
+                lat,
+                location,
+                lon,
+                sunrise,
+                sunset,
+                temp,
+                timezone,
+                weather_description,
             })
         } catch (e) {
             return ({ error: e.message })
